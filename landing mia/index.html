@@ -144,27 +144,27 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
 .pb-btn:hover{background:var(--dark3);transform:translateY(-1px);}
 
 /* SOLUTION */
-.sol-wrap{background:var(--dark);padding:100px 0;}
+.sol-wrap{background:#1a2535;padding:100px 0;}
 .sol-in{max-width:1200px;margin:0 auto;padding:0 64px;}
-.sol-ey{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;}
-.sol-ey i{width:20px;height:1px;background:rgba(255,255,255,.25);display:block;font-style:normal;}
+.sol-ey{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;}
+.sol-ey i{width:20px;height:1px;background:rgba(255,255,255,.2);display:block;font-style:normal;}
 .sol-t{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(32px,4vw,50px);letter-spacing:-2px;line-height:1.05;color:#fff;margin-bottom:60px;}
 .sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.sol-quote{font-size:19px;font-weight:300;font-style:italic;line-height:1.8;color:rgba(255,255,255,.45);border-left:2px solid var(--amber);padding-left:24px;margin-bottom:40px;}
+.sol-quote{font-size:19px;font-weight:300;font-style:italic;line-height:1.8;color:rgba(255,255,255,.6);border-left:2px solid var(--rose);padding-left:24px;margin-bottom:40px;}
 .sol-quote strong{font-weight:600;font-style:normal;color:#fff;}
 .sol-nums{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.sol-num{background:var(--dark2);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:24px;text-align:center;transition:all .3s;cursor:pointer;}
-.sol-num:hover{border-color:rgba(196,137,58,.25);background:rgba(196,137,58,.04);}
+.sol-num{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;text-align:center;transition:all .3s;cursor:pointer;}
+.sol-num:hover{border-color:rgba(196,116,122,.3);background:rgba(196,116,122,.06);}
 .sn-n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:38px;letter-spacing:-2.5px;color:var(--amber);}
 .sn-l{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:1.5px;margin-top:5px;}
 .flow{display:flex;flex-direction:column;}
-.flow-step{display:flex;align-items:flex-start;gap:20px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.flow-step{display:flex;align-items:flex-start;gap:20px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.08);}
 .flow-step:last-child{border-bottom:none;padding-bottom:0;}
 .flow-ico{width:44px;height:44px;border-radius:14px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
 .flow-ico svg{width:20px;height:20px;}
 .flow-nn{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.2);letter-spacing:1px;margin-bottom:4px;}
 .flow-tt{font-size:14px;font-weight:600;color:#fff;margin-bottom:3px;letter-spacing:-.2px;}
-.flow-ss{font-size:12px;color:rgba(255,255,255,.35);line-height:1.65;}
+.flow-ss{font-size:12px;color:rgba(255,255,255,.5);line-height:1.65;}
 
 /* SERVICES */
 .svc-wrap{margin-top:52px;display:grid;grid-template-columns:240px 1fr;background:#fff;border:1px solid var(--border);border-radius:28px;overflow:hidden;}
@@ -360,9 +360,10 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
 .fl-logo em{color:var(--amber);font-style:normal;}
 .fl-copy{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:.5px;}
 
+
 /* SAAS CARDS HOVER */
 .saas-card{transition:transform .25s cubic-bezier(.25,.46,.45,.94),box-shadow .25s,border-color .25s,background .25s !important;}
-.saas-card:hover{transform:translateY(-5px) scale(1.02) !important;background:rgba(196,116,122,.07) !important;border-color:rgba(196,116,122,.25) !important;box-shadow:0 18px 40px rgba(0,0,0,.25) !important;}
+.saas-card:hover{transform:translateY(-5px) scale(1.02) !important;background:rgba(196,116,122,.1) !important;border-color:rgba(196,116,122,.3) !important;box-shadow:0 18px 48px rgba(0,0,0,.35) !important;}
 .saas-card:hover .flow-tt{color:#e8a0a4 !important;}
 
 /* ANIMATIONS */
@@ -509,7 +510,7 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
   <a href="#" class="logo">NX<em>.</em>DEV</a>
   <div class="nav-links">
     <a href="#problemas">Problemas</a>
-    <a href="#solucion">Solución</a>
+    <a href="#solucion">Servicios</a>
     <a href="#demo">Demo</a>
   </div>
   <a href="https://wa.me/573154603200?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratis" target="_blank" class="nav-cta">Diagnóstico gratis →</a>
@@ -522,22 +523,21 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#problemas" onclick="toggleMenu()">Problemas</a>
-  <a href="#demo" onclick="toggleMenu()">Proyectos</a>
+  <a href="#problemas" onclick="toggleMenu()">El Problema</a>
+  <a href="#solucion" onclick="toggleMenu()">Servicios</a>
+  <a href="#demo" onclick="toggleMenu()">Demo en Vivo</a>
   <a href="https://wa.me/573154603200?text=Hola%2C%20quiero%20hablar" target="_blank" class="mobile-menu-cta" onclick="toggleMenu()">Hablemos por WhatsApp →</a>
 </div>
 <div class="hero-wrap">
 <div class="hero">
   <div>
-    <div class="hero-eyebrow"><span class="eyebrow-dot"></span> </div>
+    <div class="hero-eyebrow"><span class="eyebrow-dot"></span> Automatización · IA · Desarrollo</div>
     <h1 class="h1">
-      Automatiza<br>
-      tu negocio<br>
-      <span class="thin">con software que trabaja por ti.</span><br>
-      <span class="hl"></span>
+      Automatiza tu negocio<br>
+      <span class="thin">con sistemas que</span><br>
+      <span class="hl">trabajan por ti.</span>
     </h1>
-    <p class="hero-sub">Desarrollo sistemas, apps y automatizaciones con inteligencia artificial para que vendas más, operes mejor y crezcas sin depender de procesos manuales.</p>
-
+    <p class="hero-sub">Integramos software, IA y automatización para que vendas más, operes mejor y escales sin depender de procesos manuales.</p>
     <div class="hero-btns">
       <a href="#demo" class="btn-p">Ver cómo funciona →</a>
       <a href="https://wa.me/573154603200?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratis" target="_blank" class="btn-s">Solicitar diagnóstico gratis</a>
@@ -582,13 +582,39 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
 </div>
 </div>
 
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <div class="t-item"><span class="t-sep">✦</span> Automatización de negocios</div>
+    <div class="t-item"><span class="t-sep">✦</span> Bots de Ventas</div>
+    <div class="t-item"><span class="t-sep">✦</span> Python · Supabase · Vercel</div>
+    <div class="t-item"><span class="t-sep">✦</span> IA aplicada a negocios</div>
+    <div class="t-item"><span class="t-sep">✦</span> Sistemas POS</div>
+    <div class="t-item"><span class="t-sep">✦</span> WhatsApp API</div>
+    <div class="t-item"><span class="t-sep">✦</span> Apps a Medida</div>
+    <div class="t-item"><span class="t-sep">✦</span> Control de Inventario</div>
+    <div class="t-item"><span class="t-sep">✦</span> Reportes Automáticos</div>
+    <div class="t-item"><span class="t-sep">✦</span> LATAM · EE.UU · Remote</div>
+    <div class="t-item"><span class="t-sep">✦</span> Automatización de negocios</div>
+    <div class="t-item"><span class="t-sep">✦</span> Bots de Ventas</div>
+    <div class="t-item"><span class="t-sep">✦</span> Python · Supabase · Vercel</div>
+    <div class="t-item"><span class="t-sep">✦</span> IA aplicada a negocios</div>
+    <div class="t-item"><span class="t-sep">✦</span> Sistemas POS</div>
+    <div class="t-item"><span class="t-sep">✦</span> WhatsApp API</div>
+    <div class="t-item"><span class="t-sep">✦</span> Apps a Medida</div>
+    <div class="t-item"><span class="t-sep">✦</span> Control de Inventario</div>
+    <div class="t-item"><span class="t-sep">✦</span> Reportes Automáticos</div>
+    <div class="t-item"><span class="t-sep">✦</span> LATAM · EE.UU · Remote</div>
+  </div>
+</div>
+
 <!-- PROBLEMS -->
 <section class="sec reveal" id="problemas">
   <div class="prob-head">
     <div>
       <div class="eyebrow"><i></i>El problema</div>
       <h2 class="sec-t">Tu negocio pierde dinero en procesos <br>que deberían estar<br>automatizados.</h2>
-    </div> <p class="sec-d"></p>
+    </div> <p class="sec-d">Esto no es falta de esfuerzo. Es falta de sistema.</p>
   </div>
   <div class="prob-grid">
     <div class="prob-card reveal d1">
@@ -636,49 +662,43 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
   <div class="sol-in">
     <div class="sol-ey reveal"><i></i>La solución</div>
     <h2 class="sol-t reveal">Sistemas diseñados para<br>vender, organizar y escalar.</h2>
-    <div class="sol-quote">
-  Soluciones digitales diseñadas para tu negocio.
-
-  <br><br>
-
-  <strong>Bots, automatización de ventas, sistemas POS, apps internas
-  y software con IA a medida.</strong>
-
-  <br><br>
-
-  Todo conectado en un solo sistema,
-  <strong>automatizado y listo para escalar sin fricción.</strong>
+    <div class="sol-grid">
+      <div class="reveal">
+        <div class="sol-quote">Soluciones digitales diseñadas para tu negocio.<br><br>
+<strong>Bots, automatización de ventas, sistemas POS, apps internas y software con IA a medida.</strong><br><br>
+Todo conectado en un solo sistema, <strong>automatizado y listo para escalar sin fricción.</strong>
 </div>
+      </div>
       <div class="flow reveal d2">
         <div style="margin-bottom:16px;font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.3);letter-spacing:2px;text-transform:uppercase;">Capacidades del sistema</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
 
-          <div class="flow-step saas-card" style="border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.03);padding:18px;border-radius:14px;cursor:pointer;flex-direction:column;gap:8px;">
+          <div class="flow-step saas-card" style="border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.04);padding:18px;border-radius:14px;cursor:pointer;flex-direction:column;gap:8px;">
             <div class="flow-tt">Asistente de WhatsApp con IA</div>
             <div class="flow-ss">Responde, califica y cierra ventas automáticamente 24/7</div>
           </div>
 
-          <div class="flow-step saas-card" style="border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.03);padding:18px;border-radius:14px;cursor:pointer;flex-direction:column;gap:8px;">
+          <div class="flow-step saas-card" style="border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.04);padding:18px;border-radius:14px;cursor:pointer;flex-direction:column;gap:8px;">
             <div class="flow-tt">Automatización de ventas</div>
             <div class="flow-ss">Flujo completo desde el primer mensaje hasta el pago</div>
           </div>
 
-          <div class="flow-step saas-card" style="border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.03);padding:18px;border-radius:14px;cursor:pointer;flex-direction:column;gap:8px;">
+          <div class="flow-step saas-card" style="border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.04);padding:18px;border-radius:14px;cursor:pointer;flex-direction:column;gap:8px;">
             <div class="flow-tt">Agentes de IA personalizados</div>
             <div class="flow-ss">Entrenados con la información de tu negocio</div>
           </div>
 
-          <div class="flow-step saas-card" style="border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.03);padding:18px;border-radius:14px;cursor:pointer;flex-direction:column;gap:8px;">
+          <div class="flow-step saas-card" style="border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.04);padding:18px;border-radius:14px;cursor:pointer;flex-direction:column;gap:8px;">
             <div class="flow-tt">Desarrollo de software a medida</div>
             <div class="flow-ss">Apps, sistemas y dashboards adaptados a tu operación</div>
           </div>
 
-          <div class="flow-step saas-card" style="border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.03);padding:18px;border-radius:14px;cursor:pointer;flex-direction:column;gap:8px;">
+          <div class="flow-step saas-card" style="border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.04);padding:18px;border-radius:14px;cursor:pointer;flex-direction:column;gap:8px;">
             <div class="flow-tt">Inteligencia de negocio</div>
-            <div class="flow-ss">Métricas en tiempo real para tomar decisiones</div>
+            <div class="flow-ss">Métricas en tiempo real para tomar decisiones con datos</div>
           </div>
 
-          <div class="flow-step saas-card" style="border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.03);padding:18px;border-radius:14px;cursor:pointer;flex-direction:column;gap:8px;">
+          <div class="flow-step saas-card" style="border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.04);padding:18px;border-radius:14px;cursor:pointer;flex-direction:column;gap:8px;">
             <div class="flow-tt">Integración de IA</div>
             <div class="flow-ss">WhatsApp, Instagram, Excel y más conectados</div>
           </div>
@@ -711,7 +731,7 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
           <div style="display:flex;flex:1;overflow:hidden;height:460px;">
             <!-- SIDEBAR -->
             <div style="width:160px;flex-shrink:0;background:#0f1923;display:flex;flex-direction:column;overflow-y:auto;">
-              <div style="padding:16px 12px 12px;"><div style="font-weight:900;font-size:16px;letter-spacing:-1px;color:#fff;">KYR<em style="color:#00966a;font-style:normal;">I</em></div><div style="font-size:9px;color:rgba(255,255,255,.35);font-family:'JetBrains Mono',monospace;letter-spacing:.5px;margin-top:2px;"><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#00966a;margin-right:4px;"></span>Don Juan Joyería</div></div>
+              <div style="padding:16px 12px 12px;"><div style="font-weight:900;font-size:16px;letter-spacing:-1px;color:#fff;">KYR<em style="color:#00966a;font-style:normal;">I</em></div><div style="font-size:9px;color:rgba(255,255,255,.35);font-family:'JetBrains Mono',monospace;letter-spacing:.5px;margin-top:2px;"><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#00966a;margin-right:4px;"></span>Importadora Ejemplo</div></div>
               <div style="height:1px;background:rgba(255,255,255,.06);margin:8px 0;"></div>
               <div class="ks-item active" onclick="kyriGoTo('dashboard',this)" style="display:flex;align-items:center;gap:8px;padding:9px 10px;margin:2px 6px;border-radius:8px;font-size:11px;font-weight:600;color:rgba(0,150,106,1);cursor:pointer;background:rgba(0,150,106,.15);">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard
@@ -722,7 +742,7 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
               <div class="ks-item" onclick="kyriGoTo('chat',this)" style="display:flex;align-items:center;gap:8px;padding:9px 10px;margin:2px 6px;border-radius:8px;font-size:11px;font-weight:600;color:rgba(255,255,255,.45);cursor:pointer;">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>KYRI Chat
               </div>
-              <div style="margin-top:auto;padding:10px 6px;"><div style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.06);"><div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#00966a,#0052cc);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;flex-shrink:0;">DJ</div><div><div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.6);">Don Juan</div><div style="font-size:8px;color:rgba(255,255,255,.25);font-family:'JetBrains Mono',monospace;">Admin</div></div></div></div>
+              <div style="margin-top:auto;padding:10px 6px;"><div style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.06);"><div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#00966a,#0052cc);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;flex-shrink:0;">DJ</div><div><div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.6);">Tu Negocio</div><div style="font-size:8px;color:rgba(255,255,255,.25);font-family:'JetBrains Mono',monospace;">Admin</div></div></div></div>
             </div>
             <!-- MAIN -->
             <div style="flex:1;overflow-y:auto;background:#f5f7fa;display:flex;flex-direction:column;">
@@ -745,7 +765,7 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
                   </div>
                   <div style="background:rgba(0,150,106,.06);border:1px solid rgba(0,150,106,.15);border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
                     <div style="width:22px;height:22px;border-radius:6px;background:#00966a;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff;flex-shrink:0;">K</div>
-                    <div style="font-size:11px;color:#4a5568;line-height:1.5;"><strong style="color:#00966a;">Meta superada.</strong> Llevas $50.3M con margen 39.5%. Reabastece Cadena Cartier antes de mañana.</div>
+                    <div style="font-size:11px;color:#4a5568;line-height:1.5;"><strong style="color:#00966a;">Meta superada.</strong> Llevas $50.3M con margen 38.5%. Reabastece Funda iPhone 15 antes de mañana.</div>
                   </div>
                 </div>
               </div>
@@ -770,7 +790,7 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
               <div class="ky-screen" id="ky-chat" style="display:none;flex-direction:column;height:100%;">
                 <div style="background:#fff;border-bottom:1px solid #e4e8ef;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;"><div style="font-weight:800;font-size:16px;letter-spacing:-.5px;">KYRI Chat</div><div style="font-size:9px;color:#00966a;background:rgba(0,150,106,.08);padding:4px 10px;border-radius:6px;border:1px solid rgba(0,150,106,.15);font-family:'JetBrains Mono',monospace;">IA activa</div></div>
                 <div style="flex:1;padding:12px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;" id="kyriChatArea">
-                  <div style="display:flex;align-items:flex-start;gap:8px;"><div style="width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,#00966a,#0052cc);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff;flex-shrink:0;">K</div><div style="padding:8px 12px;border-radius:4px 10px 10px 10px;font-size:11px;line-height:1.55;max-width:80%;background:rgba(0,150,106,.06);border:1px solid rgba(0,150,106,.12);">¡Hola Don Juan! Hoy llevas <strong>$50.3M</strong> en ventas con margen del 39.5%. ¿En qué te ayudo?</div></div>
+                  <div style="display:flex;align-items:flex-start;gap:8px;"><div style="width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,#00966a,#0052cc);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff;flex-shrink:0;">K</div><div style="padding:8px 12px;border-radius:4px 10px 10px 10px;font-size:11px;line-height:1.55;max-width:80%;background:rgba(0,150,106,.06);border:1px solid rgba(0,150,106,.12);">¡Hola! Hoy llevas <strong>$50.3M</strong> en ventas con margen del 38.5%. ¿En qué te ayudo?</div></div>
                 </div>
                 <div style="padding:10px;border-top:1px solid #e4e8ef;display:flex;gap:8px;">
                   <input id="kyriChatInput" style="flex:1;padding:8px 12px;border:1px solid #e4e8ef;border-radius:8px;font-size:11px;font-family:'Montserrat',sans-serif;outline:none;color:#0f1923;background:#f5f7fa;" placeholder="Pregúntale algo a KYRI..." onkeydown="if(event.key==='Enter')kyriSend()">
@@ -790,109 +810,28 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
   </div>
 </div>
 
-<!-- PRICING -->
-<div class="pricing-wrap reveal">
-  <div class="pricing-in">
-    <div class="pricing-ey"><i></i>Inversión</div>
-    <h2 class="pricing-t">Resultados visibles desde las primeras etapas.</h2>
-    <p class="pricing-d">Incluye soporte, mantenimiento y mejoras continuas. Sin costos ocultos.</p>
-    <div class="pricing-cards">
-
-      <!-- Card 1: Ventas -->
-      <div class="pc reveal d1">
-        <div class="pc-label">Ventas Automáticas</div>
-        <div class="pc-ico" style="background:var(--rose-l);border:1px solid var(--rose-b);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--rose)"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </div>
-        <div class="pc-name">Sistema de Ventas</div>
-        <div class="pc-price">$800.000<span class="pc-price-unit">COP</span></div>
-        <div class="pc-sub">Implementación · pago único</div>
-        <div class="pc-mnt">$120.000 <span style="font-size:11px;font-weight:400;">COP/mes</span></div>
-        <div class="pc-mnt-sub">Mantenimiento mensual</div>
-        <div class="pc-divider"></div>
-        <div class="pc-desc">Bot que responde, filtra y hace seguimiento. Más ventas sin estar pendiente del celular.</div>
-        <a href="https://wa.me/573154603200?text=Quiero%20ventas%20automaticas" target="_blank" class="pc-cta">Lo quiero →</a>
-      </div>
-
-      <!-- Card 2: Control (featured) -->
-      <div class="pc featured reveal d2">
-        <div class="pc-badge"><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3 3.5.5-2.5 2.5.5 3.5L6 9l-3 1.5.5-3.5L1 4.5l3.5-.5z"/></svg>Más solicitado</div>
-        <div class="pc-label">Control de Negocio</div>
-        <div class="pc-ico" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        </div>
-        <div class="pc-name">App de Control</div>
-        <div class="pc-price">$1.200.000<span class="pc-price-unit">COP</span></div>
-        <div class="pc-sub">Implementación · pago único</div>
-        <div class="pc-mnt">$150.000 <span style="font-size:11px;font-weight:400;color:rgba(255,255,255,.3);">COP/mes</span></div>
-        <div class="pc-mnt-sub">Mantenimiento mensual</div>
-        <div class="pc-divider"></div>
-        <div class="pc-desc">Dashboard, inventario, IA y reportes. Control total de tu negocio en un solo lugar.</div>
-        <a href="https://wa.me/573154603200?text=Quiero%20app%20de%20control" target="_blank" class="pc-cta">Lo quiero →</a>
-      </div>
-
-      <!-- Card 3: A medida -->
-      <div class="pc reveal d3">
-        <div class="pc-label">Desarrollo Custom</div>
-        <div class="pc-ico" style="background:var(--cream2);border:1px solid var(--border);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--text3)"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </div>
-        <div class="pc-name">A tu Medida</div>
-        <div class="pc-price" style="font-size:26px;">Desde $500.000</div>
-        <div class="pc-sub" style="margin-bottom:4px;">COP</div>
-        <div class="pc-sub">Según complejidad</div>
-        <div class="pc-mnt" style="color:var(--text2);font-size:15px;">A convenir</div>
-        <div class="pc-mnt-sub">Según el proyecto</div>
-        <div class="pc-divider"></div>
-        <div class="pc-desc">Evaluación inicial sin costo. Propuesta clara en 24 horas. Sin compromisos a largo plazo.</div>
-        <a href="https://wa.me/573154603200?text=Tengo%20una%20idea%20a%20medida" target="_blank" class="pc-cta">Cuéntame →</a>
-      </div>
-
-    </div>
-    <div class="pricing-note">Todos los planes incluyen soporte, mantenimiento y mejoras continuas</div>
-  </div>
-</div>
-
 <!-- DIFFERENTIATORS / BENEFICIOS -->
 <section class="sec reveal" id="diferencial">
   <div class="eyebrow"><i></i>Beneficios</div>
-  <h2 class="sec-t">Lo que cambia cuando tu negocio funciona con sistemas</h2>
-<p class="sec-d">
-Pasas de operar manualmente a tener un sistema que vende, organiza y escala por ti.
-</p>
-   
-<div class="flow-step">
-  <div>
-    <div class="flow-nn">01</div>
-    <div class="flow-tt">Más ventas, menos esfuerzo</div>
-    <div class="flow-ss">
-      Automatizas la atención, el seguimiento y el cierre de clientes.
-      Tu negocio vende incluso cuando no estás disponible.
+  <h2 class="sec-t">Lo que cambia cuando tu negocio<br>funciona con sistemas</h2>
+  <p class="sec-d" style="margin-bottom:52px;">Pasas de operar manualmente a tener un sistema que vende, organiza y escala por ti.</p>
+  <div class="dif-grid">
+    <div class="dif-card reveal d1">
+      <div class="dif-n">01</div>
+      <div class="dif-ico" style="background:var(--rose-l);border:1px solid var(--rose-b);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+      <div class="dif-body"><div class="dif-tt">Más ventas, menos esfuerzo</div><div class="dif-dd">Automatizas atención, seguimiento y cierres. Tu negocio vende incluso cuando no estás disponible.</div></div>
+    </div>
+    <div class="dif-card reveal d2">
+      <div class="dif-n">02</div>
+      <div class="dif-ico" style="background:var(--green-l);border:1px solid var(--green-b);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <div class="dif-body"><div class="dif-tt">Control total en tiempo real</div><div class="dif-dd">Ventas, inventario y métricas en un solo lugar. Tomas decisiones con datos, no con suposiciones.</div></div>
+    </div>
+    <div class="dif-card reveal d3">
+      <div class="dif-n">03</div>
+      <div class="dif-ico" style="background:var(--violet-l);border:1px solid var(--violet-b);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M6 20V10M12 20V4M18 20v-6"/></svg></div>
+      <div class="dif-body"><div class="dif-tt">Escalas sin depender de más personal</div><div class="dif-dd">El sistema absorbe lo operativo y te permite crecer sin caos ni costos fijos adicionales.</div></div>
     </div>
   </div>
-</div>
-
-<div class="flow-step">
-  <div>
-    <div class="flow-nn">02</div>
-    <div class="flow-tt">Control total en tiempo real</div>
-    <div class="flow-ss">
-      Visualiza ventas, inventario y métricas clave en un solo lugar.
-      Tomas decisiones con datos, no con suposiciones.
-    </div>
-  </div>
-</div>
-
-<div class="flow-step">
-  <div>
-    <div class="flow-nn">03</div>
-    <div class="flow-tt">Escalas sin depender de más personal</div>
-    <div class="flow-ss">
-      Creces sin aumentar tu carga operativa.
-      El sistema absorbe el trabajo repetitivo y te permite enfocarte en expandir.
-    </div>
-  </div>
-</div>
 </section>
 
 <!-- PROCESO -->
@@ -902,50 +841,30 @@ Pasas de operar manualmente a tener un sistema que vende, organiza y escala por 
     <h2 class="sol-t">Así implementamos tu sistema</h2>
     <div class="sol-grid">
       <div>
-        <div class="sol-quote">Un proceso claro, rápido y enfocado en resultados.
-        Pasas de procesos manuales a un sistema automatizado listo para escalar.de crecimiento.</div>
+        <div class="sol-quote">Un proceso claro, rápido y enfocado en resultados.<br><br>
+<strong>Pasas de procesos manuales a un sistema automatizado listo para escalar.</strong></div>
+      </div>
       <div class="flow">
-       
-<div class="flow-step">
-  <div>
-    <div class="flow-nn">01</div>
-    <div class="flow-tt">Diagnóstico estratégico</div>
-    <div class="flow-ss">
-      Analizamos tu negocio, detectamos cuellos de botella y oportunidades reales de automatización.
+        <div class="flow-step">
+          <div class="flow-ico" style="background:rgba(212,96,122,.12);border:1px solid var(--rose-b);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+          <div><div class="flow-nn">01</div><div class="flow-tt">Diagnóstico estratégico</div><div class="flow-ss">Analizamos tu negocio y detectamos oportunidades reales de automatización</div></div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-ico" style="background:var(--amber-l);border:1px solid var(--amber-b);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <div><div class="flow-nn">02</div><div class="flow-tt">Diseño del sistema</div><div class="flow-ss">Definimos arquitectura: ventas, flujos, herramientas e integración</div></div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-ico" style="background:var(--green-l);border:1px solid var(--green-b);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div><div class="flow-nn">03</div><div class="flow-tt">Desarrollo e integración</div><div class="flow-ss">Construimos y conectamos todo: WhatsApp, web, sistemas y más</div></div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-ico" style="background:var(--violet-l);border:1px solid var(--violet-b);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div><div class="flow-nn">04</div><div class="flow-tt">Implementación y escalamiento</div><div class="flow-ss">Entrega lista para usar, optimización continua y soporte para crecer</div></div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="flow-step">
-  <div>
-    <div class="flow-nn">02</div>
-    <div class="flow-tt">Diseño del sistema</div>
-    <div class="flow-ss">
-      Definimos la arquitectura completa: ventas, automatización, herramientas y flujos integrados.
-    </div>
-  </div>
-</div>
-
-<div class="flow-step">
-  <div>
-    <div class="flow-nn">03</div>
-    <div class="flow-tt">Desarrollo e integración</div>
-    <div class="flow-ss">
-      Construimos el sistema adaptado a tu operación y conectamos todos los canales (WhatsApp, web, etc).
-    </div>
-  </div>
-</div>
-
-<div class="flow-step">
-  <div>
-    <div class="flow-nn">04</div>
-    <div class="flow-tt">Implementación y escalamiento</div>
-    <div class="flow-ss">
-      Entrega lista para usar, optimización continua y soporte para que el sistema crezca contigo.
-    </div>
-  </div>
-</div>
-
+</div><!-- /sol-wrap proceso -->
 
 <!-- CTA -->
 <div class="cta-wrap reveal">
@@ -981,13 +900,13 @@ function toggleMenu(){
 // KYRI EMBEDDED DEMO
 (function(){
   const KYRI_PRODS = [
-    {name:'Cadena Cartier',price:7.0,cost:4.2,stock:4,emoji:'⛓️'},
-    {name:'Anillo Rolex',price:3.8,cost:2.3,stock:12,emoji:'💍'},
-    {name:'Pulsera N8H',price:1.8,cost:0.98,stock:0,emoji:'💎'},
-    {name:'Pulsera Guerrero',price:1.2,cost:0.65,stock:3,emoji:'📿'},
-    {name:'Tobillera Dama',price:0.89,cost:0.49,stock:7,emoji:'✨'},
-    {name:'Pulsera Tejida',price:0.52,cost:0.28,stock:3,emoji:'🪢'},
-    {name:'Pulsera Niña',price:0.35,cost:0.18,stock:0,emoji:'🌸'},
+    {name:'Audífonos Bluetooth',price:8.5,cost:4.8,stock:6,emoji:'🎧'},
+    {name:'Smartwatch Pro',price:12.0,cost:6.9,stock:3,emoji:'⌚'},
+    {name:'Funda iPhone 15',price:1.8,cost:0.85,stock:0,emoji:'📱'},
+    {name:'Cargador USB-C 65W',price:2.4,cost:1.2,stock:14,emoji:'🔌'},
+    {name:'Lámpara LED Escritorio',price:3.2,cost:1.7,stock:5,emoji:'💡'},
+    {name:'Mochila Urbana',price:4.5,cost:2.3,stock:2,emoji:'🎒'},
+    {name:'Teclado Mecánico',price:9.8,cost:5.4,stock:0,emoji:'⌨️'},
   ];
 
   function animCount(id, to, prefix, suffix, dur) {
@@ -1037,8 +956,8 @@ function toggleMenu(){
   const kyriAnswers = [
     q=>q.includes('gan')?'Hoy llevas <strong style="color:#00966a;">$19.9M COP</strong> de ganancia neta. Margen del 39.5%.':null,
     q=>q.includes('meta')||q.includes('llegar')?'Llevas el <strong style="color:#00966a;">100.7%</strong> de la meta. ¡La superaste! Meta era $50M, llevas $50.3M.':null,
-    q=>q.includes('margen')||q.includes('mejor')?'El mejor margen es <strong style="color:#00966a;">Pulsera Guerrero</strong> con 45.8%. Le sigue Cadena Cartier con 40%.':null,
-    q=>q.includes('reabas')||q.includes('stock')?'<strong>Urgente:</strong> Pulsera N8H y Pulsera Niña están agotadas. Cadena Cartier con 4 uds solo alcanza ~2 días.':null,
+    q=>q.includes('margen')||q.includes('mejor')?'El mejor margen es <strong style="color:#00966a;">Funda iPhone 15</strong> con 52.8%. Le sigue Cargador USB-C con 50%.':null,
+    q=>q.includes('reabas')||q.includes('stock')?'<strong>Urgente:</strong> Funda iPhone 15 y Teclado Mecánico están agotados. Mochila Urbana con 2 uds es crítica.':null,
     q=>q.includes('ingres')||q.includes('vendi')||q.includes('hoy')?'Hoy llevas <strong style="color:#00966a;">$50.3M COP</strong> en ingresos totales con 9 productos. ¡Meta superada!':null,
   ];
 
@@ -1056,7 +975,7 @@ function toggleMenu(){
     const av = document.createElement('div');
     av.style.cssText=`width:22px;height:22px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:${isUser?'11':'9'}px;font-weight:800;color:#fff;flex-shrink:0;background:${isUser?'#e4e8ef':'linear-gradient(135deg,#00966a,#0052cc)'};`;
     av.style.color=isUser?'#4a5568':'#fff';
-    av.textContent=isUser?'DJ':'K';
+    av.textContent=isUser?'Tú':'K';
     const bub=document.createElement('div');
     bub.style.cssText=`padding:8px 12px;border-radius:${isUser?'10px 4px 10px 10px':'4px 10px 10px 10px'};font-size:11px;line-height:1.55;max-width:80%;${isUser?'background:#f0f2f5;border:1px solid #e4e8ef;color:#4a5568':'background:rgba(0,150,106,.06);border:1px solid rgba(0,150,106,.12);color:#0f1923'}`;
     bub.innerHTML=msg;
