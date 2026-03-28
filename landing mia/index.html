@@ -11,7 +11,6 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 
 :root{
-  /* ── NUEVA PALETA ── */
   --cream:#faf7f4;
   --cream2:#f3eeea;
   --cream3:#ebe4dc;
@@ -33,18 +32,16 @@
   --border:rgba(26,22,18,.08);
   --border2:rgba(26,22,18,.13);
 
-  /* secondary accents – warm tones que armonizan con el rosa */
   --green:#7a9e7e;
   --green-l:rgba(122,158,126,.08);
   --green-b:rgba(122,158,126,.2);
   --violet:#9e7a8a;
   --violet-l:rgba(158,122,138,.08);
   --violet-b:rgba(158,122,138,.2);
-  --amber:#c4747a;   /* mantenemos rose como amber p/ consistencia interna */
+  --amber:#c4747a;
   --amber-l:rgba(196,116,122,.08);
   --amber-b:rgba(196,116,122,.2);
 
-  /* secciones */
   --section-alt:#f3eeea;
   --section-mid:#ede7e1;
   --section-deep:#e6dfd7;
@@ -58,7 +55,6 @@ body{
   overflow-x:hidden;
 }
 
-/* GRAIN SUTIL */
 body::after{
   content:'';
   position:fixed;inset:0;z-index:9999;
@@ -95,7 +91,23 @@ nav.scrolled{box-shadow:0 2px 24px rgba(26,22,18,.06);}
    HERO
 ══════════════════════════════ */
 .hero-wrap{max-width:1200px;margin:0 auto;}
-.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;padding:140px 64px 80px;gap:64px;}
+
+/* ─── FIX PRINCIPAL: grid de 2 columnas correctamente ─── */
+.hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;   /* col izquierda / col derecha */
+  align-items:center;
+  padding:140px 64px 80px;
+  gap:64px;
+}
+
+/* columna izquierda: solo texto + botones + stats */
+.hero-left{display:flex;flex-direction:column;}
+
+/* columna derecha: solo el card */
+.hero-right{opacity:0;animation:fadeUp .7s ease .22s forwards;}
+
 .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;opacity:0;animation:fadeUp .7s ease .1s forwards;}
 .eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--rose);animation:blink 2.2s infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:.2;}}
@@ -103,17 +115,23 @@ h1.h1{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(48px,5
 h1.h1 .thin{font-weight:300;font-style:italic;color:var(--text2);font-family:'Montserrat',sans-serif;letter-spacing:-1px;}
 h1.h1 .hl{color:var(--rose);white-space:nowrap;}
 .hero-sub{font-size:15px;font-weight:400;color:var(--text2);line-height:1.9;max-width:420px;margin-bottom:40px;opacity:0;animation:fadeUp .7s ease .3s forwards;}
-.hero-btns{display:flex;gap:12px;align-items:center;opacity:0;animation:fadeUp .7s ease .4s forwards;}
+.hero-btns{display:flex;gap:12px;align-items:center;opacity:0;animation:fadeUp .7s ease .4s forwards;flex-wrap:wrap;}
 .btn-p{display:inline-flex;align-items:center;gap:8px;padding:15px 30px;background:var(--rose);color:#fff;border:none;border-radius:100px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Montserrat',sans-serif;text-decoration:none;transition:all .25s;letter-spacing:.3px;}
 .btn-p:hover{background:var(--rose2);transform:translateY(-2px);box-shadow:0 14px 36px var(--rose-shadow);}
 .btn-s{display:inline-flex;align-items:center;gap:8px;padding:15px 30px;background:transparent;color:var(--rose);border:1px solid rgba(196,116,122,.3);border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Montserrat',sans-serif;text-decoration:none;transition:all .2s;}
 .btn-s:hover{border-color:var(--rose);background:var(--rose-l);}
-.hero-stats{display:flex;gap:40px;margin-top:52px;padding-top:32px;border-top:1px solid var(--border2);opacity:0;animation:fadeUp .7s ease .5s forwards;}
+
+/* ── STATS separados claramente del bloque de botones ── */
+.hero-stats{
+  display:flex;gap:40px;
+  margin-top:52px;padding-top:32px;
+  border-top:1px solid var(--border2);
+  opacity:0;animation:fadeUp .7s ease .5s forwards;
+}
 .hs-n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:30px;letter-spacing:-2px;line-height:1;color:var(--text);}
 .hs-l{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:1.5px;margin-top:3px;}
 
 /* HERO CARD */
-.hero-right{opacity:0;animation:fadeUp .7s ease .22s forwards;}
 .hv{background:var(--white);border:1px solid var(--border2);border-radius:28px;padding:8px;box-shadow:0 8px 48px rgba(196,116,122,.12);}
 .hv-inner{border-radius:22px;overflow:hidden;}
 .hv-top{background:var(--dark);padding:18px 22px;display:flex;align-items:center;justify-content:space-between;}
@@ -129,6 +147,32 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
 .hv-lbl{font-size:13px;font-weight:600;letter-spacing:-.2px;color:var(--text);}
 .hv-sub{font-size:10px;color:var(--text3);margin-top:1px;font-family:'JetBrains Mono',monospace;}
 .hv-badge{margin-left:auto;padding:4px 10px;border-radius:100px;font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;font-family:'JetBrains Mono',monospace;white-space:nowrap;}
+
+/* ── KYRI DEMO LINK EN CARD ── */
+.hv-demo-link{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  margin:7px;padding:12px;
+  background:var(--dark);
+  border-radius:14px;
+  color:var(--cream);
+  font-size:11px;font-weight:700;
+  text-decoration:none;letter-spacing:.4px;
+  font-family:'Montserrat',sans-serif;
+  transition:all .25s;
+  position:relative;overflow:hidden;
+}
+.hv-demo-link::after{content:'';position:absolute;inset:0;background:var(--rose);opacity:0;transition:opacity .25s;}
+.hv-demo-link:hover::after{opacity:.18;}
+.hv-demo-link:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(26,22,18,.18);}
+.hv-demo-link span{position:relative;z-index:1;}
+.hv-demo-link .demo-badge{
+  position:relative;z-index:1;
+  padding:3px 8px;background:var(--rose);
+  border-radius:100px;font-size:8px;font-weight:800;
+  color:#fff;letter-spacing:.5px;
+  animation:pulse-badge 2.5s ease infinite;
+}
+@keyframes pulse-badge{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.8;transform:scale(.96);}}
 
 /* ══════════════════════════════
    TICKER
@@ -149,7 +193,7 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
 .sec-d{font-size:15px;font-weight:400;color:var(--text2);line-height:1.9;max-width:480px;}
 
 /* ══════════════════════════════
-   PROBLEMS – fondo crema
+   PROBLEMS
 ══════════════════════════════ */
 .prob-head{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:52px;}
 .prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px;}
@@ -168,7 +212,7 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
 .pb-btn:hover{background:var(--rose2);transform:translateY(-1px);}
 
 /* ══════════════════════════════
-   SOLUTION – crema2
+   SOLUTION
 ══════════════════════════════ */
 .sol-wrap{background:var(--section-alt);padding:100px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .sol-in{max-width:1200px;margin:0 auto;padding:0 64px;}
@@ -192,40 +236,13 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
 .flow-tt{font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px;letter-spacing:-.2px;}
 .flow-ss{font-size:12px;color:var(--text2);line-height:1.65;}
 
-/* SERVICES TABS */
-.svc-wrap{margin-top:52px;display:grid;grid-template-columns:240px 1fr;background:var(--white);border:1px solid var(--border);border-radius:28px;overflow:hidden;}
-.svc-nav{border-right:1px solid var(--border);padding:18px 14px;}
-.svc-tab{display:flex;align-items:center;gap:14px;padding:15px 14px;border-radius:16px;margin-bottom:6px;cursor:pointer;transition:all .2s;}
-.svc-tab:last-child{margin-bottom:0;}
-.svc-tab:hover{background:var(--cream);}
-.svc-tab.active{background:var(--rose);}
-.tab-ico{width:40px;height:40px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:transform .3s;}
-.svc-tab.active .tab-ico{transform:scale(1.05);}
-.tab-ico svg{width:18px;height:18px;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-.tab-nm{font-size:13px;font-weight:700;letter-spacing:-.2px;transition:color .2s;color:var(--text);}
-.svc-tab.active .tab-nm{color:#fff;}
-.tab-sb{font-size:10px;color:var(--text3);margin-top:1px;font-family:'JetBrains Mono',monospace;}
-.svc-tab.active .tab-sb{color:rgba(255,255,255,.45);}
-.svc-panel{padding:44px;display:none;}
-.svc-panel.active{display:block;animation:panelIn .3s ease;}
-@keyframes panelIn{from{opacity:0;transform:translateX(10px);}to{opacity:1;transform:none;}}
-.p-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;}
-.p-ico{width:56px;height:56px;border-radius:18px;display:flex;align-items:center;justify-content:center;}
-.p-ico svg{width:26px;height:26px;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
-.p-tag{display:inline-flex;align-items:center;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.3px;font-family:'JetBrains Mono',monospace;}
-.p-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:28px;letter-spacing:-1.5px;margin-bottom:10px;color:var(--text);}
-.p-desc{font-size:13px;font-weight:400;color:var(--text2);line-height:1.9;margin-bottom:24px;}
-.p-feats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px;}
-.pf{display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--cream);border:1px solid var(--border);border-radius:10px;font-size:12px;font-weight:500;color:var(--text2);transition:all .2s;cursor:pointer;}
-.pf:hover{border-color:var(--border2);color:var(--text);background:var(--cream2);}
-.pf-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
-.p-stack{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;}
-.stk{padding:5px 12px;background:var(--cream2);border:1px solid var(--border);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);}
-.p-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:var(--rose);color:#fff;border:none;border-radius:100px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Montserrat',sans-serif;text-decoration:none;transition:all .2s;letter-spacing:.3px;}
-.p-cta:hover{background:var(--rose2);transform:translateY(-1px);}
+/* SAAS CARDS */
+.saas-card{transition:transform .25s cubic-bezier(.25,.46,.45,.94),box-shadow .25s,border-color .25s,background .25s !important;}
+.saas-card:hover{transform:translateY(-4px) !important;background:var(--rose-l) !important;border-color:var(--rose-b) !important;box-shadow:0 12px 32px rgba(196,116,122,.1) !important;}
+.saas-card:hover .flow-tt{color:var(--rose) !important;}
 
 /* ══════════════════════════════
-   DEMO – crema profunda
+   DEMO
 ══════════════════════════════ */
 .demo-wrap{background:var(--section-deep);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:100px 0;}
 .demo-in{max-width:1200px;margin:0 auto;padding:0 64px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
@@ -238,8 +255,14 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
 .df{display:flex;align-items:center;gap:14px;font-size:14px;font-weight:500;color:var(--text);}
 .df-ico{width:26px;height:26px;border-radius:8px;flex-shrink:0;background:var(--rose);display:flex;align-items:center;justify-content:center;}
 .df-ico svg{width:13px;height:13px;stroke:#fff;fill:none;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;}
+
+/* Botones de demo — separados */
+.demo-btns{display:flex;gap:12px;flex-wrap:wrap;}
 .demo-btn{display:inline-flex;align-items:center;gap:8px;padding:17px 36px;background:var(--rose);color:#fff;border:none;border-radius:100px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Montserrat',sans-serif;text-decoration:none;transition:all .2s;letter-spacing:.3px;}
 .demo-btn:hover{background:var(--rose2);transform:translateY(-2px);box-shadow:0 14px 36px var(--rose-shadow);}
+.demo-btn-ext{display:inline-flex;align-items:center;gap:8px;padding:17px 28px;background:transparent;color:var(--text);border:1px solid var(--border2);border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Montserrat',sans-serif;text-decoration:none;transition:all .2s;letter-spacing:.3px;}
+.demo-btn-ext:hover{border-color:var(--rose);color:var(--rose);background:var(--rose-l);}
+.demo-btn-ext svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 
 /* KYRI IFRAME */
 .kyri-iframe-wrap{
@@ -250,14 +273,12 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
 .kyri-embed{display:flex;flex-direction:column;height:100%;font-family:'Montserrat',sans-serif;}
 .ky-screen{display:none;flex-direction:column;flex:1;}
 .ky-screen.active{display:flex;}
-
-/* KYRI MOCKUP */
 .ks-item{display:flex;align-items:center;gap:8px;padding:9px 10px;margin:2px 6px;border-radius:8px;font-size:11px;font-weight:600;color:rgba(255,255,255,.45);cursor:pointer;transition:all .2s;}
 .ks-item:hover{background:rgba(255,255,255,.06);color:rgba(255,255,255,.75);}
 .ks-item.active{background:rgba(0,150,106,.15);color:#00966a;}
 
 /* ══════════════════════════════
-   BENEFICIOS – crema
+   BENEFICIOS
 ══════════════════════════════ */
 .dif-grid{display:flex;flex-direction:column;gap:8px;margin-top:52px;max-width:680px;}
 .dif-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:16px;transition:all .35s cubic-bezier(.25,.46,.45,.94);cursor:pointer;}
@@ -270,13 +291,8 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
 .dif-tt{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;letter-spacing:-.2px;margin-bottom:2px;color:var(--text);}
 .dif-dd{font-size:12px;font-weight:400;color:var(--text2);line-height:1.55;}
 
-/* SAAS CARDS HOVER */
-.saas-card{transition:transform .25s cubic-bezier(.25,.46,.45,.94),box-shadow .25s,border-color .25s,background .25s !important;}
-.saas-card:hover{transform:translateY(-4px) !important;background:var(--rose-l) !important;border-color:var(--rose-b) !important;box-shadow:0 12px 32px rgba(196,116,122,.1) !important;}
-.saas-card:hover .flow-tt{color:var(--rose) !important;}
-
 /* ══════════════════════════════
-   CTA FINAL – BLANCO LIMPIO
+   CTA FINAL
 ══════════════════════════════ */
 .cta-outer{
   background:var(--white);
@@ -284,13 +300,11 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
   position:relative;
   overflow:hidden;
 }
-/* línea rose decorativa arriba */
 .cta-outer::before{
   content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
   width:180px;height:2px;background:var(--rose);border-radius:0 0 2px 2px;
   opacity:.55;
 }
-/* blob sutil fondo */
 .cta-outer::after{
   content:'';position:absolute;
   top:-120px;right:-120px;
@@ -313,7 +327,7 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
 .cta-note{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);margin-top:18px;letter-spacing:.5px;}
 
 /* ══════════════════════════════
-   FOOTER – blanco
+   FOOTER
 ══════════════════════════════ */
 .footer-w{border-top:1px solid var(--border);background:var(--white);}
 .footer{max-width:1200px;margin:0 auto;padding:22px 64px;display:flex;align-items:center;justify-content:space-between;}
@@ -366,79 +380,141 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
 }
 
 /* ══════════════════════════════
-   RESPONSIVE
+   RESPONSIVE — TABLET 768–1024
 ══════════════════════════════ */
 @media(max-width:1024px){
-  nav{padding:16px 28px;}
+  nav{padding:16px 32px;}
   .nav-links{display:none;}
-  .hero{grid-template-columns:1fr;gap:40px;padding:120px 28px 60px;min-height:auto;}
-  .hero-right{order:-1;}
+
+  /* Hero: apila columnas, card primero */
+  .hero{
+    grid-template-columns:1fr;
+    gap:40px;
+    padding:120px 32px 60px;
+    min-height:auto;
+  }
+  .hero-left{order:2;}
+  .hero-right{order:1;}
+
   .hv-rows{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
-  .hero-stats{gap:20px;}
+  .hero-stats{gap:24px;}
   .hs-n{font-size:24px;}
+
   .prob-head{grid-template-columns:1fr;gap:20px;margin-bottom:32px;}
   .prob-grid{grid-template-columns:1fr 1fr;gap:10px;}
+
   .sol-grid{grid-template-columns:1fr;gap:40px;}
   .sol-nums{grid-template-columns:repeat(4,1fr);}
-  .svc-wrap{grid-template-columns:1fr;border-radius:20px;}
-  .svc-nav{display:flex;flex-wrap:wrap;gap:6px;padding:14px;border-right:none;border-bottom:1px solid var(--border);}
-  .svc-tab{flex:1;min-width:calc(50% - 6px);margin-bottom:0;}
-  .svc-panel{padding:28px;}
-  .p-feats{grid-template-columns:1fr;}
-  .demo-in{grid-template-columns:1fr;gap:40px;}
+
+  .demo-in{grid-template-columns:1fr;gap:40px;padding:0 32px;}
+  .kyri-iframe-wrap{height:480px;}
+
   .dif-grid{max-width:100%;}
-  .sec{padding:64px 28px;}
-  .sol-in,.demo-in,.cta-in{padding:0 28px;}
+  .sec{padding:64px 32px;}
+  .sol-in{padding:0 32px;}
+  .cta-in{padding:0 32px;}
 }
 
+/* ══════════════════════════════
+   RESPONSIVE — ANDROID / MÓVIL ≤640
+══════════════════════════════ */
 @media(max-width:640px){
   nav{padding:14px 20px;}
   .nav-cta{display:none;}
   .nav-burger{display:flex !important;}
-  .hero{padding:100px 20px 48px;gap:32px;}
-  h1.h1{font-size:clamp(36px,10vw,52px);letter-spacing:-2px;}
-  .hero-sub{font-size:14px;}
+
+  /* Hero */
+  .hero{padding:96px 20px 48px;gap:32px;}
+  h1.h1{font-size:clamp(34px,9.5vw,50px);letter-spacing:-2px;}
+  .hero-sub{font-size:14px;max-width:100%;}
+
+  /* Botones hero: columna completa */
   .hero-btns{flex-direction:column;gap:10px;}
-  .btn-p,.btn-s{width:100%;justify-content:center;padding:14px 20px;}
-  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px;}
+  .btn-p,.btn-s{width:100%;justify-content:center;padding:14px 20px;font-size:13px;}
+
+  /* Stats: 2 columnas en móvil */
+  .hero-stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:32px;
+    padding-top:24px;
+  }
   .hs-n{font-size:22px;}
+
+  /* Card hero: filas simples */
   .hv-rows{grid-template-columns:1fr;}
+  .hv-demo-link{font-size:10px;padding:11px;}
+
+  /* Ticker */
   .ticker-wrap{padding:12px 0;}
   .t-item{font-size:9px;padding:0 18px;gap:10px;}
+
+  /* Secciones */
   .sec{padding:52px 20px;}
   .sec-t{font-size:clamp(26px,8vw,38px);letter-spacing:-1.5px;}
+
+  /* Problemas */
   .prob-head{grid-template-columns:1fr;gap:14px;margin-bottom:24px;}
   .prob-grid{grid-template-columns:1fr;gap:8px;}
   .prob-card{padding:20px;}
   .prob-n{font-size:34px;letter-spacing:-3px;}
   .prob-banner{flex-direction:column;gap:20px;padding:24px;text-align:center;}
+  .pb-tt{font-size:15px;}
   .pb-btn{margin-left:0;width:100%;text-align:center;}
+
+  /* Solution */
   .sol-wrap{padding:52px 0;}
   .sol-in{padding:0 20px;}
-  .sol-t{font-size:clamp(26px,8vw,38px);letter-spacing:-1.5px;margin-bottom:36px;}
-  .sol-quote{font-size:15px;}
+  .sol-t{font-size:clamp(26px,8vw,38px);letter-spacing:-1.5px;margin-bottom:32px;}
+  .sol-quote{font-size:14px;}
   .sol-nums{grid-template-columns:1fr 1fr;gap:8px;}
   .sn-n{font-size:28px;}
   .flow-step{gap:14px;padding:18px 0;}
   .flow-ico{width:38px;height:38px;}
-  .svc-wrap{grid-template-columns:1fr;}
-  .svc-nav{padding:10px;}
-  .svc-tab{padding:10px;}
-  .tab-ico{width:34px;height:34px;}
-  .tab-nm{font-size:12px;}
-  .svc-panel{padding:20px;}
-  .p-top{flex-direction:column;gap:12px;align-items:flex-start;}
-  .p-title{font-size:22px;letter-spacing:-1px;}
-  .p-feats{grid-template-columns:1fr;gap:6px;}
+
+  /* Demo */
   .demo-wrap{padding:52px 0;}
-  .demo-in{padding:0 20px;grid-template-columns:1fr;gap:32px;}
+  .demo-in{padding:0 20px;gap:28px;}
   .demo-t{font-size:clamp(24px,8vw,36px);letter-spacing:-1.5px;}
-  .dif-card{padding:22px;}
-  .cta-wrap{padding:80px 0;}
+  .demo-d{font-size:14px;}
+
+  /* Botones demo: columna */
+  .demo-btns{flex-direction:column;gap:10px;}
+  .demo-btn,.demo-btn-ext{width:100%;justify-content:center;padding:15px 20px;font-size:13px;}
+
+  /* KYRI iframe más corto en móvil */
+  .kyri-iframe-wrap{height:440px;}
+
+  /* Beneficios */
+  .dif-card{padding:16px;}
+  .dif-tt{font-size:13px;}
+  .dif-dd{font-size:11px;}
+
+  /* CTA */
+  .cta-wrap{padding:72px 0;}
   .cta-in{padding:0 20px;}
-  .cta-t{font-size:clamp(32px,10vw,48px);letter-spacing:-2px;}
+  .cta-t{font-size:clamp(30px,10vw,46px);letter-spacing:-2px;}
+  .cta-d{font-size:14px;}
   .cta-btn{padding:16px 28px;font-size:13px;width:100%;justify-content:center;}
+
+  /* Footer */
   .footer-w .footer{padding:18px 20px;flex-direction:column;gap:8px;text-align:center;}
+
+  /* WhatsApp float más pequeño */
+  .wa-float{width:50px;height:50px;bottom:20px;right:20px;}
+  .wa-float svg{width:26px;height:26px;}
+}
+
+/* ══════════════════════════════
+   RESPONSIVE — ANDROID PEQUEÑO ≤380
+══════════════════════════════ */
+@media(max-width:380px){
+  h1.h1{font-size:clamp(30px,9vw,42px);}
+  .hs-n{font-size:20px;}
+  .hv-row{padding:10px 12px;}
+  .hv-lbl{font-size:12px;}
+  .hv-badge{display:none;}
 }
 </style>
 </head>
@@ -465,23 +541,41 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
   <a href="#problemas" onclick="toggleMenu()">El Problema</a>
   <a href="#solucion" onclick="toggleMenu()">Servicios</a>
   <a href="#demo" onclick="toggleMenu()">Demo en Vivo</a>
+  <!-- ── KYRI DEMO LINK EN MENÚ MÓVIL ── -->
+  <a href="https://kyri-demo.nx.dev" target="_blank" onclick="toggleMenu()" style="color:var(--rose) !important;">🔗 Demo KYRI en vivo</a>
   <a href="https://wa.me/573154603200?text=Hola%2C%20quiero%20hablar" target="_blank" class="mobile-menu-cta" onclick="toggleMenu()">Hablemos por WhatsApp →</a>
 </div>
 
-<!-- HERO -->
+<!-- ══════════════════════════════
+     HERO — columna izquierda y derecha separadas correctamente
+══════════════════════════════ -->
 <div class="hero-wrap">
 <div class="hero">
-  <div>
+
+  <!-- COLUMNA IZQUIERDA: texto + botones + stats -->
+  <div class="hero-left">
     <div class="hero-eyebrow"><span class="eyebrow-dot"></span> Automatización · IA · Desarrollo</div>
     <h1 class="h1">
       Agencia de automatización con IA<br>
       <span class="thin">para ventas y operaciones.</span>
     </h1>
     <p class="hero-sub">Implementamos sistemas de automatización con IA que aumentan ventas, organizan operaciones y escalan negocios.</p>
+
+    <!-- BOTONES — bloque independiente -->
     <div class="hero-btns">
       <a href="#demo" class="btn-p">Ver cómo funciona →</a>
       <a href="https://wa.me/573154603200?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratis" target="_blank" class="btn-s">Solicitar diagnóstico gratis</a>
     </div>
+
+    <!-- STATS — bloque independiente con borde separador -->
+    <div class="hero-stats">
+      <div><div class="hs-n">3×</div><div class="hs-l">más ventas automatizadas</div></div>
+      <div><div class="hs-n">24/7</div><div class="hs-l">operación sin parar</div></div>
+      <div><div class="hs-n">-80%</div><div class="hs-l">tareas manuales</div></div>
+    </div>
+  </div>
+
+  <!-- COLUMNA DERECHA: card — hermano directo del grid, NO anidado -->
   <div class="hero-right">
     <div class="hv">
       <div class="hv-inner">
@@ -515,11 +609,18 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
             <div class="hv-badge" style="background:var(--violet-l);color:var(--violet);border:1px solid var(--violet-b);">Custom</div>
           </div>
         </div>
+        <!-- ── BOTÓN DEMO KYRI — dentro del card, al fondo ── -->
+        <!-- REEMPLAZA LA URL con tu dominio real de KYRI -->
+        <a href="https://kyri-demo.nx.dev" target="_blank" class="hv-demo-link">
+          <span>🔗 Ver demo KYRI en vivo</span>
+          <span class="demo-badge">LIVE</span>
+        </a>
       </div>
     </div>
   </div>
-</div>
-</div>
+
+</div><!-- fin .hero -->
+</div><!-- fin .hero-wrap -->
 
 <!-- TICKER -->
 <div class="ticker-wrap">
@@ -645,15 +746,28 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
     <div class="reveal">
       <div class="demo-ey"><i></i>Proyecto real</div>
       <h2 class="demo-t">Mira cómo funciona<br>en un negocio real.</h2>
-      <p class="demo-d">Este es un sistema tipo POS diseñado para automatizar ventas, controlar operaciones y tomar decisiones con datos. Flujo completo: venta → registro → reporte.</p>
+      <p class="demo-d">Este es KYRI — un sistema tipo POS diseñado para automatizar ventas, controlar operaciones y tomar decisiones con datos. Flujo completo: venta → registro → reporte.</p>
       <div class="demo-feats">
         <div class="df"><div class="df-ico"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Dashboard en tiempo real con KPIs del negocio</div>
         <div class="df"><div class="df-ico"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Control de ventas, inventario y reportes automáticos</div>
         <div class="df"><div class="df-ico"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>IA que responde preguntas sobre tu negocio</div>
         <div class="df"><div class="df-ico"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Funcionando en producción hoy</div>
       </div>
-      <a href="#demo" onclick="document.getElementById('ky-dashboard').scrollIntoView({behavior:'smooth'})" class="demo-btn">Ver cómo funcionaría en mi negocio →</a>
+
+      <!-- ── DOS BOTONES SEPARADOS ── -->
+      <div class="demo-btns">
+        <a href="#demo" onclick="document.getElementById('ky-dashboard').scrollIntoView({behavior:'smooth'})" class="demo-btn">
+          Ver demo aquí →
+        </a>
+        <!-- REEMPLAZA con tu URL real de KYRI desplegado -->
+        <a href="https://kyri-demo.nx.dev" target="_blank" class="demo-btn-ext">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Abrir KYRI en pantalla completa
+        </a>
+      </div>
     </div>
+
+    <!-- KYRI MOCKUP -->
     <div class="reveal d2">
       <div class="kyri-iframe-wrap">
         <div class="kyri-embed">
@@ -687,7 +801,7 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
             </div>
             <!-- MAIN -->
             <div style="flex:1;overflow-y:auto;background:#f5f7fa;display:flex;flex-direction:column;">
-              <!-- DASHBOARD SCREEN -->
+              <!-- DASHBOARD -->
               <div class="ky-screen active" id="ky-dashboard">
                 <div style="background:#fff;border-bottom:1px solid #e4e8ef;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
                   <div style="font-weight:800;font-size:16px;letter-spacing:-.5px;">Dashboard</div>
@@ -710,7 +824,7 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
                   </div>
                 </div>
               </div>
-              <!-- INVENTARIO SCREEN -->
+              <!-- INVENTARIO -->
               <div class="ky-screen" id="ky-inventario">
                 <div style="background:#fff;border-bottom:1px solid #e4e8ef;padding:12px 20px;font-weight:800;font-size:16px;letter-spacing:-.5px;flex-shrink:0;">Inventario</div>
                 <div style="padding:14px 16px;overflow-x:auto;">
@@ -727,7 +841,7 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
                   </div>
                 </div>
               </div>
-              <!-- CHAT SCREEN -->
+              <!-- CHAT -->
               <div class="ky-screen" id="ky-chat" style="height:100%;">
                 <div style="background:#fff;border-bottom:1px solid #e4e8ef;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
                   <div style="font-weight:800;font-size:16px;letter-spacing:-.5px;">KYRI Chat</div>
@@ -812,9 +926,7 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     CTA FINAL — FONDO BLANCO LIMPIO
-═══════════════════════════════════════ -->
+<!-- CTA FINAL -->
 <div class="cta-outer">
   <div class="cta-wrap reveal">
     <div class="cta-in">
@@ -829,7 +941,7 @@ h1.h1 .hl{color:var(--rose);white-space:nowrap;}
   </div>
 </div>
 
-<!-- FOOTER — blanco -->
+<!-- FOOTER -->
 <div class="footer-w">
   <div class="footer">
     <a href="#" class="fl-logo">NX<em>.</em>DEV</a>
